@@ -7,3 +7,5 @@ function fight() {
 }
 
 fight();
+
+
