@@ -1,28 +1,41 @@
+var playerName = window.prompt("What is your robot's name?");
+var playerHealth = 100;
+var playerAttack = 10;
 
-//creates variable from user input
-var playerName =  window.prompt("What is your robot's name?")
+console.log(playerName, playerAttack, playerHealth);
 
-// what is this?
-console.log(playerName);
-console.log("This logs a string, good for leaving yourself a message")
-//this will do math and log 20
-console.log(10+10);
-//what is this?
-console.log("Our robot's name is " + playerName);
+var enemyName = "Roberto";
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-//this creates a function named "fight"
 
-function fight() {
-    window.alert("The fight has begun!")
+var fight = function () {
+    window.alert("Welcome to Robot Gladiators!")
+    enemyHealth = enemyHealth - playerAttack;
+    console.log( playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.");
+
+    playerHealth = playerHealth - enemyAttack;
+    console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
+
+    console.log(
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+      );
+       
+      if (enemyHealth <= 0) {
+        window.alert(enemyName + " has died!");
+      } 
+      else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+     
+    }
+
+    if (playerHealth <= 0) {
+        window.alert(playerName + " has died!");
+      } 
+      else {
+        window.alert(playerName + " still has " + playerHealth + " health left.");
+      }
 }
 
-//fight();
+fight();
 
-var playerName = "Tony the Robot";
-
-// Tony the Robot is ready for battle!
-console.log("Tony the Robot" + " is ready for battle!");
-
-console.log(playerName + " is ready for battle!");
-
-console.log(" Your Robot " + playerName + ", has won!");
