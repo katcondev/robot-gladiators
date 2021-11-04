@@ -12,7 +12,9 @@ var enemyHealth = 50;
 var enemyAttack = 12;
 
 var fight = function(enemyName) {
-    window.alert("Welcome to Robot Gladiators!")
+  // repeat and execute as long as the enemy-robot is alive 
+  while(enemyHealth > 0) {
+     
     enemyHealth = enemyHealth - playerAttack;
     console.log( playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.");
 
@@ -85,12 +87,11 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
       fight(enemyName[i]);
     }
   }
+  }
 }
 
-for(var i = 0; i < enemyName.length; i++) {
-  fight(enemyName[i]);
+for (var i = 0; i < enemyName.length; i++) {
+  var pickedEnemyName = enemyName[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
 }
-
-
-
-
