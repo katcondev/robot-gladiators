@@ -1,22 +1,12 @@
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-console.log(playerName, playerAttack, playerHealth);
-
 var enemyName = ["Roborto", "Amy Android", "Robo Trumble"];
-console.log(enemyName);
-console.log(enemyName[0]);
-console.log(enemyName[1]);
-console.log(enemyName[2]);
-console.log(enemyName.length);
-
-for(var i = 0; i < enemyName.length; i++) {
-    console.log(enemyName[i]);
-    console.log(i);
-    console.log(enemyName[i] + " is at " + i + " index");
-  }
+var enemyHealth = 50;
+var enemyAttack = 12;
 
 var enemyHealth = 50;
 var enemyAttack = 12;
@@ -49,7 +39,8 @@ var fight = function(enemyName) {
       }
 
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.") ; 
-    console.log(promptFight);
+    
+  
 
     // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -91,10 +82,15 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     }
     // if no (false), ask question again by running fight() again
     else {
-      fight();
+      fight(enemyName[i]);
     }
   }
 }
 
-fight();
+for(var i = 0; i < enemyName.length; i++) {
+  fight(enemyName[i]);
+}
+
+
+
 
